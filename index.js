@@ -1,17 +1,17 @@
 
 document.addEventListener('DOMContentLoaded', function() {
-   // fetchBooks()
-   fetchPages()
-  // fetch5th()
-  // fetch1031Character()
+  fetchBooks()
+  fetchPages()
+  fetch5th()
+  fetch1031Character()
 })
 
-// function fetchBooks() {
-// 	return fetch('https://anapioficeandfire.com/api/books')
-// 	.then(response => response.json())
-// 	.then(json => renderBooks(json))
+function fetchBooks() {
+	return fetch('https://anapioficeandfire.com/api/books')
+	.then(response => response.json())
+	.then(json => renderBooks(json))
 	
-// }
+}
 function fetchPages() {
 	return fetch('https://anapioficeandfire.com/api/books')
 	.then(response => response.json())
@@ -30,18 +30,18 @@ function totalPages(json){
 	
 	})
 	const totalPages = pageCounter.reduce( (a, b) => a + b, 0 )
-	console.log(totalPages)
+	console.log('Total pages in books: ' + totalPages)
 }
 
 
-// function renderBooks(json) {
-//   const main = document.querySelector('main')
-//   json.forEach(book => {
-//     const h2 = document.createElement('h2')
-//     h2.innerHTML = `<h2>${book.name}</h2>`
-//     main.appendChild(h2)
-//   })
-// }
+function renderBooks(json) {
+  const main = document.querySelector('main')
+  json.forEach(book => {
+    const h2 = document.createElement('h2')
+    h2.innerHTML = `<h2>${book.name}</h2>`
+    main.appendChild(h2)
+  })
+}
 
 // function fetch5th() {
 // 	fetch('https://anapioficeandfire.com/api/books/5')
