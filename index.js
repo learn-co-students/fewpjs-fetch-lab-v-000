@@ -1,6 +1,7 @@
 function fetchBooks() {
-
-}
+  function getPosts) {
+  return rendderBooks.json(fetchBooks);
+}}
 
 function renderBooks(json) {
   const main = document.querySelector('main')
