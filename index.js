@@ -1,7 +1,17 @@
-fetch('https://anapioficeandfire.com/api/books')
-.then (function fetchBooks() {
-return json.getPosts(Books);
-})
+function fetchBooks(json) {
+    return fetch('https://anapioficeandfire.com/api/books')
+       .then(resp => resp.json())
+       .then(json => renderBooks(json));
+}
+
+/*
+fetch("string representing a URL to a data source")
+  .then(function(response) {
+    return response.json();
+  })
+  .then(function(json){
+    // Use this data inside of `json` to do DOM manipulation
+  })  */
 
 function renderBooks(json) {
   const main = document.querySelector('main')
