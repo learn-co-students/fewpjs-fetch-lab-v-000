@@ -3,9 +3,8 @@ function fetchBooks() {
     .then(function(response) {
       return response.json();
     })
-    .then((data) => {
-      let output = '<h2>Books</h2>';
-      console.log(data);
+    .then(function(json) => {
+      
     })
   
 }
