@@ -10,6 +10,15 @@ function renderBooks(json) {
     const h2 = document.createElement('h2')
     h2.innerHTML = `<h2>${book.name}</h2>`
     main.appendChild(h2)
+    
+    const ul = document.createElement("ul");
+    const numberOfPages = document.createElement("li");
+    const released = document.createElement("li");
+    numberOfPages.innerText = `pages: ${book.numberOfPages}`;
+    released.innerText = `released: ${book.released}`;
+    ul.appendChild(numberOfPages);
+    ul.appendChild(released);
+    h2.appendChild(ul)
   })
 }
 
