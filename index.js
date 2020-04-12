@@ -1,7 +1,7 @@
 function fetchBooks() {
-  return fetch("https://anapioficeandfire.com/api/books")
-  .then(resp => resp.json())
-  .then(json => renderBooks(json));
+  return fetch("https://anapioficeandfire.com/api/books") // this sends a fetch request to the game of thrones API for info
+  .then(resp => resp.json()) // then it takes the returned info and converts it into JSON format data
+  .then(json => renderBooks(json)); // then it takes the JSON data and calls the renderBooks function with the JSON data as an arguement.
   }
 
 
