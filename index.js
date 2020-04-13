@@ -1,5 +1,7 @@
 function fetchBooks() {
-
+  return fetch('https://anapioficeandfire.com/api/books')
+    .then(resp => resp.json())
+    .then(json => renderBooks(json));
 }
 
 function renderBooks(json) {
@@ -14,3 +16,6 @@ function renderBooks(json) {
 document.addEventListener('DOMContentLoaded', function() {
   fetchBooks()
 })
+
+
+//. Then, call the second function, renderBooks(), passing in the API's returned JSON data as the argument.
