@@ -1,4 +1,9 @@
 function fetchBooks() {
+  var proxyUrl = 'https://cors-anywhere.herokuapp.com/',
+    targetUrl = 'https://anapioficeandfire.com/api/books'
+return fetch(proxyUrl+targetUrl)
+.then(resp => resp.json())
+.then(json => renderBooks(json));
 
 }
 
