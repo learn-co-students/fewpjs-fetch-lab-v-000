@@ -1,6 +1,9 @@
 function fetchBooks() {
+  return fetch("https://anapioficeandfire.com/api/books") // this sends a fetch request to the game of thrones API for info
+  .then(resp => resp.json()) // then it takes the returned info and converts it into JSON format data
+  .then(json => renderBooks(json)); // then it takes the JSON data and calls the renderBooks function with the JSON data as an arguement.
+  }
 
-}
 
 function renderBooks(json) {
   const main = document.querySelector('main')
@@ -14,3 +17,4 @@ function renderBooks(json) {
 document.addEventListener('DOMContentLoaded', function() {
   fetchBooks()
 })
+
