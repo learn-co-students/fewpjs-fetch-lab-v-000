@@ -1,5 +1,7 @@
 function fetchBooks() {
-
+return fetch('https://anapioficeandfire.com/api/books') //returns an object that represents what the data source sent back.
+  .then(resp => resp.json()) // turning the response into JSON - returning the JSON of the results from the fetch
+  .then(json => renderBooks(json))
 }
 
 function renderBooks(json) {
